@@ -82,16 +82,16 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>Dirección de la Panadería Alicia<br />Ciudad, País</span>
+                <span>Dirección de la Panadería Alicia<br />Diriamba, reloj ..</span>
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground">
+           {/*   <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <span>+123 456 7890</span>
-              </li>
-              <li className="flex items-center gap-2 text-muted-foreground">
+              </li> */}
+          { /*   <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <span>contacto@panaderiaalicia.com</span>
-              </li>
+              </li> */ }
             </ul>
           </div>
         </div>

@@ -12,15 +12,16 @@ const Gallery = () => {
   // Placeholder images - estas deben ser reemplazadas con las imágenes reales de la panadería
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
+      src: "https://i.ibb.co/4n1yczX7/Whats-App-Image-2025-11-10-at-2-51-20-PM-1.jpg",
       alt: "Interior de Panadería Alicia",
       title: "Espacio de producción",
     },
     {
-      src: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80",
+      src: "https://i.ibb.co/9mdJ2x6g/Whats-App-Image-2025-11-10-at-2-51-20-PM.jpg",
       alt: "Proceso de horneado",
       title: "Pan recién horneado",
     },
+    {/*
     {
       src: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=800&q=80",
       alt: "Productos finales",
@@ -40,7 +41,7 @@ const Gallery = () => {
       src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
       alt: "Empaque de productos",
       title: "Empaque y presentación",
-    },
+    }, */}
   ];
 
   const lightboxImages = images.map((img) => ({ src: img.src }));

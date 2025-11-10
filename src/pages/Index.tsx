@@ -27,7 +27,7 @@ const Index = () => {
         <Gallery />
         <ModelViewer3D />
         <Results />
-        <Contact />
+      {/*  <Contact /> */}
       </main>
       <Footer />
     </div>

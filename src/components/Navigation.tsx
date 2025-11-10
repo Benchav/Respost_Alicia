@@ -33,7 +33,7 @@ const Navigation = () => {
     { label: "Propuesta", id: "improvement" },
     { label: "Galería", id: "gallery" },
     { label: "Modelos 3D", id: "models" },
-    { label: "Contacto", id: "contact" },
+   {/* { label: "Contacto", id: "contact" }, */}
   ];
 
   return (
