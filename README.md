@@ -80,7 +80,7 @@ Tipografía:
 
 ```bash
 # Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/Benchav/Respost_Alicia.git
 
 # Navegar al directorio
 cd panaderia-alicia
@@ -200,28 +200,14 @@ Modifica las variables CSS en `src/index.css`:
 - [Tailwind CSS](https://tailwindcss.com/docs)
 - [Shadcn/ui](https://ui.shadcn.com/)
 
-## 🎓 Créditos
 
-**Universidad:** [Nombre de tu Universidad]  
-**Facultad:** Ingeniería  
-**Carrera:** Ingeniería Industrial  
-**Curso:** Trabajo Final Integrador VI  
-**Año:** 2024
 
-**Equipo de desarrollo:**
-- Estudiante 1
-- Estudiante 2
-- Estudiante 3
-- Estudiante 4
+**Desarrollado por:**
+- Joshua Benjamín Chavez Lau
+
 
 **Empresa:** Panadería Alicia
 
-## 📄 Licencia
 
-Este proyecto fue desarrollado con fines académicos.
 
----
-
-**Última actualización:** Diciembre 2024
-
-Para soporte o consultas, revisa la sección de contacto en el sitio web.
+**Última actualización:** 10 de nov
