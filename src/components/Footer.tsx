@@ -68,11 +68,11 @@ const Footer = () => {
                   Modelos 3D
                 </a>
               </li>
-              <li>
+            {/*  <li>
                 <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
                   Contacto
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

@@ -62,11 +62,11 @@ const Gallery = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Conoce nuestras instalaciones, procesos y productos
           </p>
-          <div className="mt-6 p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg max-w-2xl mx-auto">
+          {/* <div className="mt-6 p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg max-w-2xl mx-auto">
             <p className="text-sm text-muted-foreground">
-              📸 <strong className="text-foreground">Nota:</strong> Las imágenes mostradas son de ejemplo. Puedes reemplazarlas con fotografías reales de la Panadería Alicia.
-            </p>
-          </div>
+               <strong className="text-foreground">Nota:</strong> Las imágenes mostradas son de ejemplo. Puedes reemplazarlas con fotografías reales de la Panadería Alicia. 
+           { </p>
+          </div> */}
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
