@@ -2,50 +2,43 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Box, Download, Smartphone, Info } from "lucide-react";
-import { useEffect, useRef } from "react";
-
-// @ts-ignore
-import "@google/model-viewer";
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'model-viewer': any;
-    }
-  }
-}
+import { useEffect } from "react";
 
 const ModelViewer3D = () => {
-  const modelViewerRef = useRef<any>(null);
-
   useEffect(() => {
-    // El componente model-viewer se carga automáticamente
+    // El visor 3D de RealityMAX se carga automáticamente
   }, []);
 
-  // URLs de ejemplo - deben ser reemplazadas con los modelos 3D reales
+  // URLs de modelos en RealityMAX (páginas web)
   const models = [
     {
-      title: "Pan Simple Bonete",
-      description: "Modelo 3D del producto principal con detalles de textura y forma",
-      glbUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
-      usdzUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.usdz",
-      poster: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80",
-      specs: {
-        weight: "85 g nominal",
-        dimensions: "~12 cm diámetro",
-        material: "Pan artesanal",
-      },
+      title: "Sala de Horno",
+      description: "Modelo 3D, sala de Hornado",
+      iframeUrl: "https://realitymax.co/t-uZEM",
+     specs: {
+       // Peso: "85 g nominal",
+       // Dimensiones: "~12 cm diámetro",
+     //   Tipo: "Pan artesanal",
+      }, 
     },
     {
-      title: "Empaque Propuesto",
-      description: "Diseño conceptual del nuevo empaque de marca",
-      glbUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
-      usdzUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.usdz",
-      poster: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=400&q=80",
+      title: "Area completa",
+      description: "Modelo 3D, Area completa de trabajo",
+      iframeUrl: "https://realitymax.co/lH1T1f",
       specs: {
-        material: "Papel kraft",
-        size: "20x15 cm",
-        design: "Logo + info",
+     //   Material: "Papel kraft ecológico",
+      //  Tamaño: "20×15 cm",
+     //   Diseño: "Logo + información nutricional",
+      },
+    },
+     {
+      title: "Entrada",
+      description: "Modelo 3D, Area de entrada al local",
+      iframeUrl: "https://realitymax.co/rJwUEY",
+      specs: {
+     //   Material: "Papel kraft ecológico",
+    //    Tamaño: "20×15 cm",
+    //    Diseño: "Logo + información nutricional",
       },
     },
   ];
@@ -53,6 +46,7 @@ const ModelViewer3D = () => {
   return (
     <section id="models" className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        {/* Encabezado */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,14 +60,18 @@ const ModelViewer3D = () => {
               Experiencia Interactiva
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             Modelos 3D Interactivos
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explora los modelos tridimensionales del producto y empaque. Puedes rotarlos, hacer zoom y verlos en realidad aumentada.
+            Explora los modelos tridimensionales del producto y empaque. Puedes rotarlos, hacer zoom y verlos en realidad aumentada directamente desde RealityMAX.
           </p>
         </motion.div>
 
+        {/* Tarjetas de modelos */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {models.map((model, index) => (
             <motion.div
@@ -88,50 +86,48 @@ const ModelViewer3D = () => {
                   <CardTitle className="text-2xl">{model.title}</CardTitle>
                   <p className="text-sm text-muted-foreground">{model.description}</p>
                 </CardHeader>
+
                 <CardContent className="space-y-6">
-                  <div className="relative">
-                    <model-viewer
-                      ref={modelViewerRef}
-                      src={model.glbUrl}
-                      ios-src={model.usdzUrl}
-                      poster={model.poster}
-                      alt={model.title}
-                      shadow-intensity="1"
-                      camera-controls
-                      auto-rotate
-                      ar
-                      ar-modes="webxr scene-viewer quick-look"
+                  {/* Visor RealityMAX embebido */}
+                  <div className="relative w-full h-[400px] rounded-xl overflow-hidden bg-muted/30">
+                    <iframe
+                      src={model.iframeUrl}
+                      title={model.title}
+                      allow="fullscreen; xr-spatial-tracking; camera; gyroscope; accelerometer"
                       style={{
                         width: "100%",
-                        height: "400px",
-                        background: "linear-gradient(to bottom, hsl(var(--muted)), hsl(var(--background)))",
+                        height: "100%",
+                        border: "none",
                         borderRadius: "0.75rem",
                       }}
-                    >
-                      <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm rounded-lg p-2 text-xs text-muted-foreground border border-border">
-                        <p className="font-semibold">💡 Controles:</p>
-                        <p>• Arrastra para rotar</p>
-                        <p>• Scroll para zoom</p>
-                        <p>• 2 dedos para mover</p>
-                      </div>
-                    </model-viewer>
+                    ></iframe>
                   </div>
 
+                  {/* Especificaciones */}
                   <div className="grid grid-cols-3 gap-4 p-4 bg-muted/50 rounded-lg">
                     {Object.entries(model.specs).map(([key, value], i) => (
                       <div key={i} className="text-center">
                         <p className="text-xs text-muted-foreground mb-1 capitalize">{key}</p>
-                        <p className="text-sm font-semibold">{value}</p>
+                      {/*  <p className="text-sm font-semibold">{value}</p> */}
                       </div>
                     ))}
                   </div>
 
+                  {/* Botones */}
                   <div className="flex flex-wrap gap-3">
-                    <Button variant="default" className="flex-1 group">
+                    <Button
+                      variant="default"
+                      className="flex-1 group"
+                      onClick={() => window.open(model.iframeUrl, "_blank")}
+                    >
                       <Smartphone className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                       Ver en AR
                     </Button>
-                    <Button variant="outline" className="flex-1 group">
+                    <Button
+                      variant="outline"
+                      className="flex-1 group"
+                      onClick={() => window.open(model.iframeUrl, "_blank")}
+                    >
                       <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                       Descargar
                     </Button>
@@ -142,13 +138,14 @@ const ModelViewer3D = () => {
           ))}
         </div>
 
+        {/* Guía informativa */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Card className="bg-gradient-to-br from-blue-500/5 to-cyan-500/5 border-2 border-blue-500/20">
+     { /*    <Card className="bg-gradient-to-br from-blue-500/5 to-cyan-500/5 border-2 border-blue-500/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl">
                 <Info className="h-6 w-6 text-blue-500" />
@@ -157,45 +154,35 @@ const ModelViewer3D = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Los modelos mostrados son de ejemplo. Para usar tus propios modelos 3D:
+                Los modelos se cargan directamente desde RealityMAX mediante URLs web. Para cambiar los modelos:
               </p>
-              
+
               <div className="bg-background rounded-lg p-6 space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">1. Preparar los archivos</h4>
+                  <h4 className="font-semibold mb-2">1. Sube tu modelo a RealityMAX</h4>
                   <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1 ml-4">
-                    <li>Exporta tus modelos en formato <strong>.GLB</strong> (para Android y web)</li>
-                    <li>Exporta también en formato <strong>.USDZ</strong> (para iOS/iPhone)</li>
-                    <li>Optimiza los archivos para que pesen menos de 5 MB</li>
+                    <li>Ve a <a href="https://realitymax.co" target="_blank" className="text-primary underline">realitymax.co</a> y crea una cuenta gratuita.</li>
+                    <li>Sube tu modelo 3D (GLB, OBJ, FBX, etc.).</li>
+                    <li>Publica el modelo y copia el enlace compartido.</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-2">2. Subir los archivos</h4>
+                  <h4 className="font-semibold mb-2">2. Actualiza el código</h4>
                   <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1 ml-4">
-                    <li>Coloca los archivos .glb y .usdz en la carpeta <code className="px-2 py-1 bg-muted rounded text-xs">public/models/</code></li>
-                    <li>Crea una imagen de poster (preview) en <code className="px-2 py-1 bg-muted rounded text-xs">public/images/</code></li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold mb-2">3. Actualizar el código</h4>
-                  <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1 ml-4">
-                    <li>En <code className="px-2 py-1 bg-muted rounded text-xs">src/components/ModelViewer3D.tsx</code>, actualiza el array <code className="px-2 py-1 bg-muted rounded text-xs">models</code></li>
-                    <li>Cambia <code className="px-2 py-1 bg-muted rounded text-xs">glbUrl</code> a <code className="px-2 py-1 bg-muted rounded text-xs">"/models/tu-modelo.glb"</code></li>
-                    <li>Cambia <code className="px-2 py-1 bg-muted rounded text-xs">usdzUrl</code> a <code className="px-2 py-1 bg-muted rounded text-xs">"/models/tu-modelo.usdz"</code></li>
-                    <li>Actualiza título, descripción y especificaciones</li>
+                    <li>Edita el array <code className="px-2 py-1 bg-muted rounded text-xs">models</code> en este componente.</li>
+                    <li>Cambia <code className="px-2 py-1 bg-muted rounded text-xs">iframeUrl</code> por la nueva URL de tu modelo.</li>
                   </ul>
                 </div>
               </div>
 
               <div className="p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg">
                 <p className="text-sm text-muted-foreground">
-                  <strong>💡 Tip:</strong> Puedes crear modelos 3D usando software como Blender (gratuito), SketchUp, o contratar servicios de modelado 3D. También existen apps móviles que escanean objetos y generan modelos 3D automáticamente.
+                  <strong>💡 Tip:</strong> RealityMAX permite compartir, rotar y visualizar tus modelos en AR sin necesidad de convertir archivos manualmente.
                 </p>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
         </motion.div>
       </div>
     </section>

@@ -9,7 +9,7 @@ import Improvement from "@/components/Improvement";
 import Gallery from "@/components/Gallery";
 import ModelViewer3D from "@/components/ModelViewer3D";
 import Results from "@/components/Results";
-import Contact from "@/components/Contact";
+//import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {

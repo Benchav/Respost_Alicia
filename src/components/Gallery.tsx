@@ -9,7 +9,7 @@ const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
-  // Placeholder images - estas deben ser reemplazadas con las imágenes reales de la panadería
+ 
   const images = [
     {
       src: "https://i.ibb.co/4n1yczX7/Whats-App-Image-2025-11-10-at-2-51-20-PM-1.jpg",
@@ -21,17 +21,17 @@ const Gallery = () => {
       alt: "Proceso de horneado",
       title: "Pan recién horneado",
     },
-    {/*
     {
-      src: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=800&q=80",
+      src: "https://i.ibb.co/MkGK3K6C/Whats-App-Image-2025-11-10-at-9-07-45-PM.jpg",
       alt: "Productos finales",
       title: "Variedad de productos",
     },
     {
-      src: "https://images.unsplash.com/photo-1548340748-6d2b7d7da280?w=800&q=80",
+      src: "https://i.ibb.co/xqh4M2G0/Whats-App-Image-2025-11-10-at-9-10-16-PM.jpg",
       alt: "Equipo de trabajo",
       title: "Nuestro equipo",
     },
+    {/*
     {
       src: "https://images.unsplash.com/photo-1534432182912-63863115e106?w=800&q=80",
       alt: "Control de calidad",
@@ -122,7 +122,7 @@ const Gallery = () => {
           viewport={{ once: true }}
           className="mt-12 max-w-3xl mx-auto"
         >
-          <Card className="bg-gradient-to-br from-primary/5 to-accent/10 border-2 border-primary/20">
+    {/*      <Card className="bg-gradient-to-br from-primary/5 to-accent/10 border-2 border-primary/20">
             <div className="p-8">
               <h3 className="text-xl font-bold mb-4">🖼️ Guía para actualizar las imágenes</h3>
               <div className="space-y-3 text-sm text-muted-foreground">
@@ -138,7 +138,7 @@ const Gallery = () => {
                 </p>
               </div>
             </div>
-          </Card>
+          </Card> */}
         </motion.div>
       </div>
     </section>
