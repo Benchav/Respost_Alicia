@@ -21,7 +21,7 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               Más de 20 años produciendo pan artesanal con dedicación y calidad. Ahora con control de peso certificado.
             </p>
-            <div className="flex gap-4">
+   { /*        <div className="flex gap-4">
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-accent hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center"
@@ -36,7 +36,7 @@ const Footer = () => {
               >
                 <Instagram className="h-5 w-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -103,6 +103,9 @@ const Footer = () => {
             </p>
             <p>
               Desarrollado como Trabajo Final Integrador VI - Ingeniería Industrial
+            </p>
+            <p>
+             JB
             </p>
           </div>
         </div>
